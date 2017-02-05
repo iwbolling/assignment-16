@@ -1,0 +1,57 @@
+#app-container {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.header {
+  margin: 32px auto;
+  text-align: center;
+}
+
+.timer-box {
+  background-image: url(../images/tomato-red-silhouette.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 464px;
+  margin: 64px auto;
+  width: 700px;
+}
+
+.timer-box .countdown{
+  color: #F7CA18;
+  font-size: 124px;
+  margin-bottom: auto;
+  padding-top: 148px;
+}
+
+.task-box {
+  background-color: rgba(255,255,255,.5);
+  font-size: 24px;
+}
+
+.task-text{color: rgba(255,255,255,0)}
+
+.input-section {
+  margin: 64px auto;
+  width: 75%;
+}
+
+.input-section input{
+  font-size: 24px;
+  text-align: left;
+  width: 90%;
+}
+
+/* SPECIAL CLASSES CALLED BY JS EVENTS AND FUNCTIONS */
+
+.special-h1{
+  color: #C8F7C5;
+  font-size: 64px;
+  margin-bottom: auto;
+  padding: 248px 0;
+}
+
+.special-hidden{
+  display: none;
+}
