@@ -53,5 +53,5 @@
 }
 
 .special-hidden{
-  display: none;
+  visibility: hidden;
 }

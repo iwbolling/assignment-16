@@ -8,6 +8,8 @@
     // if seconds on clock = 00 make it 59
     // else make seconds on clock -1
 
+
+
 // VARIABLES
 var inputGivenTask = document.querySelector(".input-section input");
 var buttonTaskStart = document.querySelector(".input-section .push-to-timer");
@@ -15,12 +17,23 @@ var h3TaskText = document.querySelector(".task-box .task-text");
 var h1Countdown =  document.querySelector(".countdown");
 var divInputSection = document.querySelector(".input-section")
 
-// GLOBAL FUNCTIONS
+function handleStartEvent(evt){
+  var eventTriggersTimer = false
+  if(evt.type === 'click') eventTriggersTimer = true
+  if(evt.type === 'keydown' && evt.keyCode ===13)  eventTriggersTimer = true;
+
+  if(eventTriggersTimer){
+    h1Countdown.className = "countdown";
+    h3TaskText.style.color = "#000000";
+    h3TaskText.textContent = inputGivenTask.value;
+    divInputSection.className = "special-hidden";
+    taskStart();
+  }
+}
+
 function taskStart(){
-  h3TaskText.style.color = "#000000";
-  h3TaskText.textContent = inputGivenTask.value;
-  divInputSection.className = "special-hidden";
   var cdArray = [25,":",00];
+
   var finalString = "";
   var cdInterval = setInterval(function(){
     if (cdArray[2] === 0 && cdArray[0] !== 0) {
@@ -41,14 +54,8 @@ function taskStart(){
       finalString = cdArray.join("");
     };
     h1Countdown.textContent = finalString;
-  }, 1);
+  }, 1000);
 };
 
-inputGivenTask.addEventListener("keydown", function(event){
-  if (event.keyCode === 13) {
-    taskStart();
-  }
-})
-buttonTaskStart.addEventListener("click",function(){
-  taskStart();
-})
+inputGivenTask.addEventListener("keydown", handleStartEvent )
+buttonTaskStart.addEventListener("click", handleStartEvent )
