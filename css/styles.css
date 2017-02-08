@@ -38,9 +38,20 @@
 }
 
 .input-section input{
+  border: none;
+  border-bottom: 2px solid #000000;
   font-size: 24px;
   text-align: left;
-  width: 90%;
+  width: 80%;
+}
+
+.input-section .push-to-timer{
+  background-color: #2574A9;
+  border: none;
+  color: #FFFFFF;
+  font-size: 24px;
+  outline: none;
+  width: 100px;
 }
 
 /* SPECIAL CLASSES CALLED BY JS EVENTS AND FUNCTIONS */
